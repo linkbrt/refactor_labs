@@ -11,6 +11,7 @@ namespace RLCExamples01.Tests
         static Goods cola;
         static Goods pepsi;
         static Item item1, item2, item3, item4;
+        static IView view;
         [SetUp] 
         public void SetUp() 
         {
@@ -20,11 +21,12 @@ namespace RLCExamples01.Tests
             item2 = new Item(cola, 1, 200);
             item3 = new Item(pepsi, 10, 30);
             item4 = new Item(pepsi, 15, 100);
+            view = new TxtView();
         }
         [Test]
         public void statementTest1()
         {
-            Bill b1 = new Bill(new Customer("test", 10));
+            Bill b1 = new Bill(new Customer("test", 10), view);
             b1.addGoods(item1);
             string bill = b1.statement();
             Assert.AreEqual(19, b1.totalBonus);
@@ -33,7 +35,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest2()
         {
-            Bill b1 = new Bill(new Customer("test", 20));
+            Bill b1 = new Bill(new Customer("test", 20), view);
             b1.addGoods(item2);
             string bill = b1.statement();
             Assert.AreEqual(10, b1.totalBonus);
@@ -42,7 +44,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest3()
         {
-            Bill b1 = new Bill(new Customer("test", 30));
+            Bill b1 = new Bill(new Customer("test", 30), view);
             b1.addGoods(item3);
             string bill = b1.statement();
             Assert.AreEqual(3, b1.totalBonus);
@@ -51,7 +53,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest4()
         {
-            Bill b1 = new Bill(new Customer("test", 5));
+            Bill b1 = new Bill(new Customer("test", 5), view);
             b1.addGoods(item4);
             string bill = b1.statement();
             Assert.AreEqual(15, b1.totalBonus);
@@ -60,7 +62,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest5()
         {
-            Bill b1 = new Bill(new Customer("test", 15));
+            Bill b1 = new Bill(new Customer("test", 15), view);
             b1.addGoods(item4);
             b1.addGoods(item1);
             string bill = b1.statement();
@@ -70,7 +72,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest6()
         {
-            Bill b1 = new Bill(new Customer("test", 100));
+            Bill b1 = new Bill(new Customer("test", 100), view);
             b1.addGoods(item1);
             b1.addGoods(item2);
             string bill = b1.statement();
@@ -80,7 +82,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest7()
         {
-            Bill b1 = new Bill(new Customer("test", 1000));
+            Bill b1 = new Bill(new Customer("test", 1000), view);
             b1.addGoods(item1);
             b1.addGoods(item3);
             string bill = b1.statement();
@@ -90,7 +92,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest8()
         {
-            Bill b1 = new Bill(new Customer("test", 40));
+            Bill b1 = new Bill(new Customer("test", 40), view);
             b1.addGoods(item1);
             b1.addGoods(item4);
             b1.addGoods(item2);
@@ -101,7 +103,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest9()
         {
-            Bill b1 = new Bill(new Customer("test", 60));
+            Bill b1 = new Bill(new Customer("test", 60), view);
             b1.addGoods(item1);
             b1.addGoods(item3);
             b1.addGoods(item2);
@@ -112,7 +114,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest10()
         {
-            Bill b1 = new Bill(new Customer("test", 77));
+            Bill b1 = new Bill(new Customer("test", 77), view);
             b1.addGoods(item1);
             b1.addGoods(item2);
             b1.addGoods(item4);
@@ -123,7 +125,7 @@ namespace RLCExamples01.Tests
         [Test]
         public void statementTest11()
         {
-            Bill b1 = new Bill(new Customer("test", 85));
+            Bill b1 = new Bill(new Customer("test", 85), view);
             b1.addGoods(item1);
             b1.addGoods(item2);
             b1.addGoods(item3);

@@ -6,10 +6,12 @@
         private Customer _customer;
         public double totalAmount = 0;
         public int totalBonus = 0;
-        public Bill(Customer customer)
+        IView view;
+        public Bill(Customer customer, IView view)
         {
             this._customer = customer;
             this._items = new List<Item>();
+            this.view = view;
         }
         public void addGoods(Item arg)
         {
@@ -18,7 +20,7 @@
         public string statement()
         {
             List<Item>.Enumerator items = _items.GetEnumerator();
-            string result = getHeader();
+            string result = view.getHeader(_customer.getName());
             while (items.MoveNext())
             {
                 Item each = items.Current;
@@ -28,33 +30,12 @@
                 double thisAmount = sumWithDiscount - usedBonus;
                 totalAmount += thisAmount;
                 totalBonus += bonus;
-                result += getItemString(each, discount, thisAmount, bonus);
+                result += view.getItemString(each, discount, thisAmount, bonus);
             }
             _customer.receiveBonus(totalBonus);
-            result += getFooter();
+            result += view.getFooter(totalAmount, totalBonus);
             return result;
         }
-        string getHeader()
-        {
-            return "Счет для " + _customer.getName() + "\n" +
-                   "\t" + "Название" + "\t" + "Цена" +
-                   "\t" + "Кол-во" + "Стоимость" + "\t" + "Скидка" +
-                   "\t" + "Сумма" + "\t" + "Бонус" + "\n";
-        }
-        string getFooter()
-        {
-            return "Сумма счета составляет " + totalAmount.ToString() + "\n" +
-                    "Вы заработали " + totalBonus.ToString() +
-                    " бонусных баллов";
-        }
-        string getItemString(Item item, double discount, 
-                             double thisAmount, int bonus)
-        {
-            return "\t" + item.getGoods().getTitle() + "\t" +
-                   "\t" + item.getPrice() + "\t" + item.getQuantity() +
-                   "\t" + (item.getQuantity() * item.getPrice()).ToString() +
-                   "\t" + discount.ToString() + "\t" + thisAmount.ToString() +
-                   "\t" + bonus.ToString() + "\n";
-        }
+        
     }
 }
