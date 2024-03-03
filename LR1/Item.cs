@@ -29,10 +29,10 @@ namespace RLCExamples01
             return _Goods;
         }
         public int getBonus() {
-            return getGoods().getBonus(this);
+            return getGoods().getBonus(_quantity, _price);
         }
         public (double, double) getDiscount(Customer customer) {
-            return getGoods().getDiscount(customer, this);
+            return getGoods().getDiscount(customer, _quantity, _price);
         }
         public double getSum() {
             return this.getQuantity() * this.getPrice();

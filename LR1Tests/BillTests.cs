@@ -14,8 +14,8 @@ namespace RLCExamples01.Tests
         [SetUp] 
         public void SetUp() 
         {
-            cola = new Goods("Cola", Goods.REGULAR);
-            pepsi = new Goods("Pepsi", Goods.SALE);
+            cola = new RegularGoods("Cola");
+            pepsi = new SaleGoods("Pepsi");
             item1 = new Item(cola, 6, 65);
             item2 = new Item(cola, 1, 200);
             item3 = new Item(pepsi, 10, 30);

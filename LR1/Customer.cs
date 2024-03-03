@@ -41,8 +41,8 @@ namespace RLCExamples01
             }
             return bonusTaken;
         }
-        public int getUsedBonus(Item item, double discount) {
-            return useBonus((int)(item.getSum())) - (int)discount;
+        public int getUsedBonus(double needBonus) {
+            return useBonus((int)needBonus);
         }
     }
 }
