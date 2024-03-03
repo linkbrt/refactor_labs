@@ -6,7 +6,6 @@
         private Customer _customer;
         public double totalAmount = 0;
         public int totalBonus = 0;
-        public int usedBonus = 0;
         public Bill(Customer customer)
         {
             this._customer = customer;
@@ -22,14 +21,14 @@
             string result = getHeader();
             while (items.MoveNext())
             {
-                double discount = getDiscount(items.Current);
-                int bonus = getBonus(items.Current);
-                double sumWithDiscount = getSum(items.Current) - discount;
-                int usedBonus = getUsedBonus(items.Current, discount);
+                Item each = items.Current;
+                (double discount, double usedBonus) = each.getDiscount(_customer);
+                int bonus = each.getBonus();
+                double sumWithDiscount = each.getSum() - discount;
                 double thisAmount = sumWithDiscount - usedBonus;
                 totalAmount += thisAmount;
                 totalBonus += bonus;
-                result += getItemString(items.Current, discount, thisAmount, bonus);
+                result += getItemString(each, discount, thisAmount, bonus);
             }
             _customer.receiveBonus(totalBonus);
             result += getFooter();
@@ -47,54 +46,6 @@
             return "Сумма счета составляет " + totalAmount.ToString() + "\n" +
                     "Вы заработали " + totalBonus.ToString() +
                     " бонусных баллов";
-        }
-        int getBonus(Item item)
-        {
-            int bonus = 0;
-            switch (item.getGoods().getPriceCode())
-            {
-                case Goods.REGULAR:
-                    bonus = (int)(item.getQuantity() * item.getPrice() * 0.05);
-                    break;
-                case Goods.SPECIAL_OFFER:
-                    break;
-                case Goods.SALE:
-                    bonus = (int)(item.getQuantity() * item.getPrice() * 0.01);
-                    break;
-            }
-            return bonus;
-        }
-        double getSum(Item item)
-        {
-            return item.getQuantity() * item.getPrice();
-        }
-        double getDiscount(Item item)
-        {
-            double discount = 0;
-            switch (item.getGoods().getPriceCode())
-            {
-                case Goods.REGULAR:
-                    if (item.getQuantity() > 2)
-                        discount = getSum(item) * 0.03; // 3%
-                    if (item.getQuantity() > 5)
-                        usedBonus += getUsedBonus(item, discount);
-                    break;
-                case Goods.SPECIAL_OFFER:
-                    if (item.getQuantity() > 10)
-                        discount = getSum(item) * 0.005; // 0.5%
-                    if (item.getQuantity() > 1)
-                        usedBonus += getUsedBonus(item, discount);
-                    break;
-                case Goods.SALE:
-                    if (item.getQuantity() > 3)
-                        discount = getSum(item) * 0.01; // 1%
-                    break;
-            }
-            return discount;
-        }
-        int getUsedBonus(Item item, double discount)
-        {
-            return _customer.useBonus((int)(getSum(item))) - (int)discount;
         }
         string getItemString(Item item, double discount, double thisAmount, int bonus)
         {
