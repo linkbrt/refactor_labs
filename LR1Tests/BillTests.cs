@@ -28,36 +28,40 @@ namespace RLCExamples01.Tests
         {
             Bill b1 = new Bill(new Customer("test", 10), view);
             b1.addGoods(item1);
-            string bill = b1.statement();
-            Assert.AreEqual(19, b1.totalBonus);
-            Assert.AreEqual(363,3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(19, billGenerator.totalBonus);
+            Assert.AreEqual(363,3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest2()
         {
             Bill b1 = new Bill(new Customer("test", 20), view);
             b1.addGoods(item2);
-            string bill = b1.statement();
-            Assert.AreEqual(10, b1.totalBonus);
-            Assert.AreEqual(3, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(10, billGenerator.totalBonus);
+            Assert.AreEqual(3, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest3()
         {
             Bill b1 = new Bill(new Customer("test", 30), view);
             b1.addGoods(item3);
-            string bill = b1.statement();
-            Assert.AreEqual(3, b1.totalBonus);
-            Assert.AreEqual(270, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(3, billGenerator.totalBonus);
+            Assert.AreEqual(270, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest4()
         {
             Bill b1 = new Bill(new Customer("test", 5), view);
             b1.addGoods(item4);
-            string bill = b1.statement();
-            Assert.AreEqual(15, b1.totalBonus);
-            Assert.AreEqual(863, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(15, billGenerator.totalBonus);
+            Assert.AreEqual(863, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest5()
@@ -65,9 +69,10 @@ namespace RLCExamples01.Tests
             Bill b1 = new Bill(new Customer("test", 15), view);
             b1.addGoods(item4);
             b1.addGoods(item1);
-            string bill = b1.statement();
-            Assert.AreEqual(34, b1.totalBonus);
-            Assert.AreEqual(863, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(34, billGenerator.totalBonus);
+            Assert.AreEqual(863, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest6()
@@ -75,9 +80,10 @@ namespace RLCExamples01.Tests
             Bill b1 = new Bill(new Customer("test", 100), view);
             b1.addGoods(item1);
             b1.addGoods(item2);
-            string bill = b1.statement();
-            Assert.AreEqual(29, b1.totalBonus);
-            Assert.AreEqual(478.3, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(29, billGenerator.totalBonus);
+            Assert.AreEqual(478.3, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest7()
@@ -85,9 +91,10 @@ namespace RLCExamples01.Tests
             Bill b1 = new Bill(new Customer("test", 1000), view);
             b1.addGoods(item1);
             b1.addGoods(item3);
-            string bill = b1.statement();
-            Assert.AreEqual(22, b1.totalBonus);
-            Assert.AreEqual(79, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(22, billGenerator.totalBonus);
+            Assert.AreEqual(79, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest8()
@@ -96,9 +103,10 @@ namespace RLCExamples01.Tests
             b1.addGoods(item1);
             b1.addGoods(item4);
             b1.addGoods(item2);
-            string bill = b1.statement();
-            Assert.AreEqual(44, b1.totalBonus);
-            Assert.AreEqual(863, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(44, billGenerator.totalBonus);
+            Assert.AreEqual(863, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest9()
@@ -107,9 +115,10 @@ namespace RLCExamples01.Tests
             b1.addGoods(item1);
             b1.addGoods(item3);
             b1.addGoods(item2);
-            string bill = b1.statement();
-            Assert.AreEqual(32, b1.totalBonus);
-            Assert.AreEqual(815.3, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(32, billGenerator.totalBonus);
+            Assert.AreEqual(815.3, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest10()
@@ -118,9 +127,10 @@ namespace RLCExamples01.Tests
             b1.addGoods(item1);
             b1.addGoods(item2);
             b1.addGoods(item4);
-            string bill = b1.statement();
-            Assert.AreEqual(44, b1.totalBonus);
-            Assert.AreEqual(863, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(44, billGenerator.totalBonus);
+            Assert.AreEqual(863, 3, billGenerator.totalAmount);
         }
         [Test]
         public void statementTest11()
@@ -130,9 +140,10 @@ namespace RLCExamples01.Tests
             b1.addGoods(item2);
             b1.addGoods(item3);
             b1.addGoods(item4);
-            string bill = b1.statement();
-            Assert.AreEqual(47, b1.totalBonus);
-            Assert.AreEqual(863, 3, b1.totalAmount);
+            BillGenerator billGenerator = new(new Customer("test", 10), view, b1);
+            billGenerator.statement();
+            Assert.AreEqual(47, billGenerator.totalBonus);
+            Assert.AreEqual(863, 3, billGenerator.totalAmount);
         }
     }
 }

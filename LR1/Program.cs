@@ -11,7 +11,7 @@ namespace RLCLab01Example
         static void Main(string[] args)
         {
             UsageExample.Example();
-            string filename = "BillInfo.yaml";
+            /*string filename = "BillInfo.yaml";
             if (args.Length == 1)
                 filename = args[0];
             FileStream fs = new FileStream(filename, FileMode.Open);
@@ -78,8 +78,9 @@ namespace RLCLab01Example
                 int qty = Convert.ToInt32(result[2].Trim());
                 b.addGoods(new Item(g[gid - 1], qty, price));
             }
-            string bill = b.statement();
-            Console.WriteLine(bill);
+            BillGenerator billGenerator = new BillGenerator(customer, view, b);
+            string bill = billGenerator.statement();
+            Console.WriteLine(bill);*/
         }
     }
 }
