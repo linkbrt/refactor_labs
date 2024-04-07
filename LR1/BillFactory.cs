@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace LR1 {
     public class BillFactory {
-        public static string CreateBill(TextReader sr) {
+        IFileSource contentFile;
+        public BillFactory(IFileSource fileSource)
+        {
+            this.contentFile = fileSource;
+        }
+        public string CreateBill(TextReader sr) {
             // read customer
-            ContentFile contentFile = new ContentFile();
             contentFile.SetSource(sr);
             string name = contentFile.GetCustomer();
             // read bonus

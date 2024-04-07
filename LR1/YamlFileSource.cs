@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LR1 {
-    internal class ContentFile {
+    internal class YamlFileSource: IFileSource {
         TextReader? Reader;
-        public ContentFile() {}
+        public YamlFileSource() {}
         public void SetSource(TextReader tr) {
             Reader = tr;
         }
