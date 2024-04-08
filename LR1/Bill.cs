@@ -66,6 +66,7 @@
                 result += view.getItemString(billItem);
             }
             _customer.receiveBonus(totalBonus);
+
             totalAmount = billSummary.TotalAmount; totalBonus = billSummary.TotalBonus;
             result += view.getFooter(billSummary.TotalAmount, billSummary.TotalBonus);
             return result;

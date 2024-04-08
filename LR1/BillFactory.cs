@@ -12,6 +12,24 @@ namespace LR1 {
         {
             this.contentFile = fileSource;
         }
+        public string[] parseConfigFile(string filename)
+        {
+            TextReader reader = new StringReader(filename);
+            string line = reader.ReadLine();
+            List<string> bonuses = new List<string>();
+            while (line != null)
+            {
+                if (line == "#BONUS") {
+                    while (line != "####")
+                    {
+                        line = reader.ReadLine();
+                        bonuses.Add(line);
+                    }
+                }
+                line = reader.ReadLine();
+            }
+            return bonuses.ToArray();
+        }
         public string CreateBill(TextReader sr) {
             // read customer
             contentFile.SetSource(sr);

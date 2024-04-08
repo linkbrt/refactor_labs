@@ -17,8 +17,8 @@ namespace RLCExamples01.Tests
         [SetUp] 
         public void SetUp() 
         {
-            cola = new RegularGoods("Cola");
-            pepsi = new SaleGoods("Pepsi");
+            cola = GoodsFactory.Create("REG", "Cola");
+            pepsi = GoodsFactory.Create("SAL", "Pepsi");
             item1 = new Item(cola, 6, 65);
             item2 = new Item(cola, 1, 200);
             item3 = new Item(pepsi, 10, 30);
