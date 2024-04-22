@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LR1\LR1.csproj" />
+    <ProjectReference Include="..\MainClassLibrary\MainClassLibrary.csproj" />
   </ItemGroup>
 
 </Project>

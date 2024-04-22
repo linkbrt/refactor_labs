@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-using RLCExamples01;
-using LR1;
+﻿using LR1;
 
-namespace RLCExamples01 {
+namespace RLCExamples01
+{
     public class Program {
         static void Main(string[] args)
         {
