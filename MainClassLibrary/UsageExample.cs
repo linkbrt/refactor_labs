@@ -9,7 +9,7 @@ namespace RLCExamples01
     {
         public static void Example()
         {
-            Goods cola = new RegularGoods("Cola");
+            /*Goods cola = new RegularGoods("Cola");
             Goods pepsi = new SaleGoods("Pepsi");
             Item i1 = new Item(cola, 6, 65);
             Item i2 = new Item(pepsi, 3, 50);
@@ -21,7 +21,7 @@ namespace RLCExamples01
             BillGenerator billGenerator = new BillGenerator(x, view, b1);
             string bill = billGenerator.statement();
 
-            Console.WriteLine(bill);
+            Console.WriteLine(bill);*/
         }
     }
 }

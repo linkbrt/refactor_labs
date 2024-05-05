@@ -8,4 +8,8 @@
     <RootNamespace>RLCExamples01</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MainClassLibrary\MainClassLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
