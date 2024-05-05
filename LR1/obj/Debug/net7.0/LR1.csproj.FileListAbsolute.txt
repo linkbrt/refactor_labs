@@ -1,0 +1,14 @@
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\bin\Debug\net7.0\LR1.exe
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\bin\Debug\net7.0\LR1.deps.json
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\bin\Debug\net7.0\LR1.runtimeconfig.json
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\bin\Debug\net7.0\LR1.dll
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\bin\Debug\net7.0\LR1.pdb
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\LR1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\LR1.AssemblyInfoInputs.cache
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\LR1.AssemblyInfo.cs
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\LR1.csproj.CoreCompileInputs.cache
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\LR1.dll
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\refint\LR1.dll
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\LR1.pdb
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\LR1.genruntimeconfig.cache
+C:\Users\home\Documents\GitHub\refactor_labs\LR1\obj\Debug\net7.0\ref\LR1.dll
